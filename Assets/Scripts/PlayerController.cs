@@ -10,10 +10,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.2f;
+    private Animator animator;
     private bool isGrounded;
     private Rigidbody2D rb;
     private void Awake()
     {
+        animator= GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         HandleMovement();
         HandleJump();
+        UpdateAnimation();
     }
     private void HandleMovement()
     {
@@ -60,5 +63,12 @@ public class PlayerController : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         }
+    }
+    private void UpdateAnimation()
+    {
+        bool isRunning = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
+        bool isJumping = !isGrounded;
+        animator.SetBool("isRunning", isRunning);
+        animator.SetBool("isJumping", isJumping);
     }
 }
