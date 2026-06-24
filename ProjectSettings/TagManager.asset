@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Ground
   - ForeGround
-  - 
+  - Player
   - 
   - 
   - 
@@ -61,6 +61,12 @@ TagManager:
     locked: 0
   - name: Stairs2
     uniqueID: 2255130741
+    locked: 0
+  - name: FireCamp
+    uniqueID: 2000667897
+    locked: 0
+  - name: Player
+    uniqueID: 156053941
     locked: 0
   m_RenderingLayers:
   - Default
