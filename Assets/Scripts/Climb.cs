@@ -24,7 +24,7 @@ public class Climb : MonoBehaviour
         if (collision.CompareTag("Ladder"))
         {
             isClimbing = false;
-            rb.gravityScale = 1f; // Re-enable gravity when not climbing
+            rb.gravityScale = 3f; // Re-enable gravity when not climbing
         }
     }
     private void FixedUpdate()

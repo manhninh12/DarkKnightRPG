@@ -13,6 +13,11 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private bool isGrounded;
     private Rigidbody2D rb;
+    private float lastAttackTime;
+    [SerializeField] private float comboResetTime = 0.5f;
+    [SerializeField] private float attackCooldown = 0.25f; // Thời gian của mỗi đòn đánh
+    private int comboStep = 0;
+
     private void Awake()
     {
         animator= GetComponent<Animator>();
@@ -28,6 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         HandleMovement();
         HandleJump();
+        HandleAttack();
         UpdateAnimation();
     }
     private void HandleMovement()
@@ -53,6 +59,37 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        }
+    }
+
+    private void HandleAttack()
+    {
+        // Reset combo if time has passed
+        if (Time.time - lastAttackTime > comboResetTime)
+        {
+            comboStep = 0;
+        }
+
+        if (Keyboard.current != null && Keyboard.current.jKey.wasPressedThisFrame) // Default J key for attack
+        {
+            // Ngăn chặn bấm nút liên tục trước khi đòn đánh kết thúc (0.25s)
+            if (comboStep > 0 && Time.time - lastAttackTime < attackCooldown) 
+                return;
+
+            lastAttackTime = Time.time;
+            comboStep++;
+
+            if (comboStep == 1)
+            {
+                animator.ResetTrigger("Attack2");
+                animator.SetTrigger("Attack1");
+            }
+            else if (comboStep == 2)
+            {
+                animator.ResetTrigger("Attack1");
+                animator.SetTrigger("Attack2");
+                comboStep = 0; // Reset after max combo
+            }
         }
     }
 
