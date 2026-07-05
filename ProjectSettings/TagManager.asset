@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Ladder
   layers:
   - Default
   - TransparentFX
@@ -56,7 +57,7 @@ TagManager:
   - name: Sp
     uniqueID: 146459293
     locked: 0
-  - name: Stairs1
+  - name: Ladder
     uniqueID: 1209685429
     locked: 0
   - name: Stairs2
