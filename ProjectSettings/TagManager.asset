@@ -15,7 +15,7 @@ TagManager:
   - Ground
   - ForeGround
   - Player
-  - 
+  - Monster
   - 
   - 
   - 
@@ -68,6 +68,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 156053941
+    locked: 0
+  - name: Slime
+    uniqueID: 991914185
     locked: 0
   m_RenderingLayers:
   - Default
