@@ -13,6 +13,9 @@ public class SlimeController : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb;
 
+    public Transform attackPoint;
+    public LayerMask attackLayer;
+
     private bool isAttacking = false;
 
     void Start()
@@ -80,6 +83,15 @@ public class SlimeController : MonoBehaviour
         animator.SetTrigger("Attack");
         rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
+        if (attackPoint != null)
+        {
+            Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, attackLayer);
+            if (collInfo)
+            {
+                Debug.Log(collInfo.transform.name);
+            }
+        }
+
         // Reset attack state after cooldown
         Invoke(nameof(ResetAttack), attackCooldown);
     }
@@ -109,7 +121,12 @@ public class SlimeController : MonoBehaviour
     { 
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
+        
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRadius);
+
+        if (attackPoint == null) return;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
     }
 }
