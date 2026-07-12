@@ -106,7 +106,7 @@ public class SlimeController : MonoBehaviour
     }
 
     private void OnDrawGizmosSelected()
-    {
+    { 
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
         Gizmos.color = Color.red;

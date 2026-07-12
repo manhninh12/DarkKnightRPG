@@ -75,6 +75,12 @@ TagManager:
   - name: Slime
     uniqueID: 991914185
     locked: 0
+  - name: House
+    uniqueID: 544754935
+    locked: 0
+  - name: Ally
+    uniqueID: 2572535201
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []
