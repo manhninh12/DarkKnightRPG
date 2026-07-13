@@ -89,6 +89,11 @@ public class SlimeController : MonoBehaviour
             if (collInfo)
             {
                 Debug.Log(collInfo.transform.name);
+                PlayerController playerController = collInfo.GetComponent<PlayerController>();
+                if (playerController != null)
+                {
+                    playerController.TakeDamage(1);
+                }
             }
         }
 

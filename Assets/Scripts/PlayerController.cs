@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private Rigidbody2D rb;
     private float lastAttackTime;
+    public int maxHealth = 5;
+    public int currentHealth;
     [SerializeField] private float comboResetTime = 0.5f;
     [SerializeField] private float attackCooldown = 0.25f; // Thời gian của mỗi đòn đánh
     private int comboStep = 0;
@@ -26,11 +28,17 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        if (currentHealth <= 0)
+        {
+            Die();
+            return;
+        }
         HandleMovement();
         HandleJump();
         HandleAttack();
@@ -107,5 +115,18 @@ public class PlayerController : MonoBehaviour
         bool isJumping = !isGrounded;
         animator.SetBool("isRunning", isRunning);
         animator.SetBool("isJumping", isJumping);
+    }
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            Die();
+            return;
+        }
+    }
+    void Die()
+    {         // Xử lý khi nhân vật chết (ví dụ: phát animation, load lại scene, v.v.)
+        Debug.Log("Player has died.");
     }
 }
