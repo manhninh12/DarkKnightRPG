@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 6632422828893880818}
   - component: {fileID: 6648416119468671446}
   - component: {fileID: 6570174879775936376}
-  - component: {fileID: 7954583895907123203}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -227,18 +226,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   climbSpeed: 3
---- !u!114 &7954583895907123203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990879996045294936}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64cb13321b49c594d8c9682bee645d64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerPersistent
 --- !u!1 &5699015386076756057
 GameObject:
   m_ObjectHideFlags: 0
