@@ -42,6 +42,15 @@ TagManager:
   - name: Background
     uniqueID: 2391449271
     locked: 0
+  - name: Background2
+    uniqueID: 1430835815
+    locked: 0
+  - name: Background3
+    uniqueID: 1720572319
+    locked: 0
+  - name: Background4
+    uniqueID: 2572535201
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -77,9 +86,6 @@ TagManager:
     locked: 0
   - name: House
     uniqueID: 544754935
-    locked: 0
-  - name: Ally
-    uniqueID: 2572535201
     locked: 0
   m_RenderingLayers:
   - Default

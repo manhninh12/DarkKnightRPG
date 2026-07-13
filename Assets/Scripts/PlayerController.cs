@@ -1,5 +1,5 @@
 using System;
-using UnityEditor.Experimental.GraphView;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +20,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float attackCooldown = 0.25f; // Thời gian của mỗi đòn đánh
     private int comboStep = 0;
 
+    [Header("Dash Settings")]
+    [SerializeField] private float dashSpeed = 15f;
+    [SerializeField] private float dashDuration = 0.2f;
+    [SerializeField] private float dashCooldown = 1f;
+    private bool isDashing;
+    private float lastDashTime = -Mathf.Infinity;
+
     private void Awake()
     {
         animator= GetComponent<Animator>();
@@ -31,7 +38,6 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {   
         if (currentHealth <= 0)
@@ -39,9 +45,13 @@ public class PlayerController : MonoBehaviour
             Die();
             return;
         }
+        
+        if (isDashing) return;
+
         HandleMovement();
         HandleJump();
         HandleAttack();
+        HandleDash();
         UpdateAnimation();
     }
     private void HandleMovement()
@@ -99,6 +109,35 @@ public class PlayerController : MonoBehaviour
                 comboStep = 0; // Reset after max combo
             }
         }
+    }
+
+    private void HandleDash()
+    {
+        if (Keyboard.current != null && Keyboard.current.leftShiftKey.wasPressedThisFrame) 
+        {
+            if (Time.time >= lastDashTime + dashCooldown && !isDashing)
+            {
+                StartCoroutine(Dash());
+            }
+        }
+    }
+
+    private IEnumerator Dash()
+    {
+        isDashing = true;
+        animator.SetTrigger("PlayerDash"); // Gọi animation PlayerDash
+        
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f; // Bỏ qua trọng lực khi đang lướt
+        
+        float dashDirection = transform.localScale.x;
+        rb.linearVelocity = new Vector2(dashDirection * dashSpeed, 0f);
+
+        yield return new WaitForSeconds(dashDuration);
+
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        lastDashTime = Time.time;
     }
 
     private void OnDrawGizmosSelected()
