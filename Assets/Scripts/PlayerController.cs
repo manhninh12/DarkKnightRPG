@@ -51,7 +51,10 @@ public class PlayerController : MonoBehaviour
             Die();
             return;
         }
-        health.text = currentHealth.ToString();
+        if (health != null)
+        {
+            health.text = currentHealth.ToString();
+        }
         
         if (isDashing) return;
 
