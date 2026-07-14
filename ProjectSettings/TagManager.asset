@@ -87,6 +87,9 @@ TagManager:
   - name: House
     uniqueID: 544754935
     locked: 0
+  - name: Ally
+    uniqueID: 1205291685
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []

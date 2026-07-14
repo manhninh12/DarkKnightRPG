@@ -13,6 +13,9 @@ public class SlimeController : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb;
 
+    public int maxHealth = 3;
+    public int currentHealth;
+
     public Transform attackPoint;
     public LayerMask attackLayer;
 
@@ -22,7 +25,7 @@ public class SlimeController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        
+        currentHealth = maxHealth;
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
         {
@@ -30,8 +33,11 @@ public class SlimeController : MonoBehaviour
         }
     }
 
-    void Update()
-    {
+    void Update() {
+        if (currentHealth <= 0) {
+            Die();
+            return;
+        }
         if (player == null) return;
         if (isAttacking) return;
 
@@ -99,6 +105,18 @@ public class SlimeController : MonoBehaviour
 
         // Reset attack state after cooldown
         Invoke(nameof(ResetAttack), attackCooldown);
+    }
+
+    public void TakeDamage(int damage) {
+        currentHealth -= damage;
+        if(currentHealth <= 0) {
+            Die();
+        }
+    }
+
+    void Die() {
+        Debug.Log(this.transform.name + "Died");
+        Destroy(this.gameObject);
     }
 
     private void ResetAttack()

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,9 +17,14 @@ public class PlayerController : MonoBehaviour
     private float lastAttackTime;
     public int maxHealth = 5;
     public int currentHealth;
+    public Text health;
     [SerializeField] private float comboResetTime = 0.5f;
     [SerializeField] private float attackCooldown = 0.25f; // Thời gian của mỗi đòn đánh
     private int comboStep = 0;
+
+    public Transform attackPoint;
+    public float attackRadius = 1f;
+    public LayerMask attackLayer; 
 
     [Header("Dash Settings")]
     [SerializeField] private float dashSpeed = 15f;
@@ -45,6 +51,7 @@ public class PlayerController : MonoBehaviour
             Die();
             return;
         }
+        health.text = currentHealth.ToString();
         
         if (isDashing) return;
 
@@ -147,6 +154,11 @@ public class PlayerController : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         }
+
+        if (attackPoint != null)
+        {
+            Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+        }
     }
     private void UpdateAnimation()
     {
@@ -155,6 +167,21 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isRunning", isRunning);
         animator.SetBool("isJumping", isJumping);
     }
+
+    public void Attack()
+    { 
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius,attackLayer);
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            if (enemy.gameObject.GetComponent<SlimeController>() != null) {
+                Debug.Log("Hit enemy");
+                enemy.gameObject.GetComponent<SlimeController>().TakeDamage(1); 
+            }
+        }
+    }
+
+
+    
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
