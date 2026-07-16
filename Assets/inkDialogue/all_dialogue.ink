@@ -1,3 +1,5 @@
+-> npc
+
 ===npc===
-hello bay be
+hello bay be, anh dung day tu chieu
 ->END

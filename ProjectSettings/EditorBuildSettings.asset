@@ -18,4 +18,5 @@ EditorBuildSettings:
     path: Assets/map2/m.unity
     guid: 085d5a01c2f9fd341b08c9ef92f77147
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: f39cf2cf7eaf5b048aa15e3a2c46674f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
