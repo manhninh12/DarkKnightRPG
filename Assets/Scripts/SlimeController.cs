@@ -115,8 +115,26 @@ public class SlimeController : MonoBehaviour
     }
 
     void Die() {
-        Debug.Log(this.transform.name + "Died");
-        Destroy(this.gameObject);
+        Debug.Log(this.transform.name + " Died");
+        
+        // Kích hoạt animation Die
+        animator.SetTrigger("Die");
+
+        // Dừng di chuyển và vô hiệu hóa trọng lực để không bị rơi xuyên qua đất
+        rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = 0f;
+
+        // Tắt va chạm để không bị tấn công hay cản đường nữa
+        Collider2D coll = GetComponent<Collider2D>();
+        if (coll != null) {
+            coll.enabled = false;
+        }
+
+        // Tắt script này để Slime không tiếp tục chạy các hàm Update
+        this.enabled = false;
+
+        // Phá hủy GameObject sau 5.5 giây (5 giây giữ nguyên frame cuối + khoảng 0.5s để chạy animation)
+        Destroy(this.gameObject, 5.5f);
     }
 
     private void ResetAttack()

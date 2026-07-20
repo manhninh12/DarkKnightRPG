@@ -6,11 +6,16 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
+    public float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.2f;
+    
+    [Header("Jump Settings")]
+    public int amountOfJumps = 2;
+    private int jumpCounts;
+    
     private Animator animator;
     private bool isGrounded;
     private Rigidbody2D rb;
@@ -84,9 +89,16 @@ public class PlayerController : MonoBehaviour
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         }
 
-        if (isGrounded && Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+        // Reset jump counts when on the ground and not jumping up
+        if (isGrounded && rb.linearVelocity.y <= 0.1f)
+        {
+            jumpCounts = amountOfJumps;
+        }
+
+        if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame && jumpCounts > 0)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            jumpCounts -= 1;
         }
     }
 
