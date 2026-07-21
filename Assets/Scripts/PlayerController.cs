@@ -206,6 +206,16 @@ public class PlayerController : MonoBehaviour
             return;
         }
     }
+
+    public void Heal(int amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        Debug.Log("Player healed by " + amount + ". Current Health: " + currentHealth);
+    }
     void Die()
     {         // Xử lý khi nhân vật chết (ví dụ: phát animation, load lại scene, v.v.)
         Debug.Log("Player has died.");
