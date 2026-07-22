@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float comboResetTime = 0.5f;
     [SerializeField] private float attackCooldown = 0.25f; // Thời gian của mỗi đòn đánh
     private int comboStep = 0;
+    
+    [Header("Attack Settings")]
+    public int attackDamage = 1; // Sát thương cơ bản
 
     public Transform attackPoint;
     public float attackRadius = 1f;
@@ -190,7 +193,7 @@ public class PlayerController : MonoBehaviour
         {
             if (enemy.gameObject.GetComponent<SlimeController>() != null) {
                 Debug.Log("Hit enemy");
-                enemy.gameObject.GetComponent<SlimeController>().TakeDamage(1); 
+                enemy.gameObject.GetComponent<SlimeController>().TakeDamage(attackDamage); 
             }
         }
     }
@@ -216,6 +219,40 @@ public class PlayerController : MonoBehaviour
         }
         Debug.Log("Player healed by " + amount + ". Current Health: " + currentHealth);
     }
+
+    public void ApplySpeedBuff(float multiplier, float duration)
+    {
+        StartCoroutine(SpeedBuffCoroutine(multiplier, duration));
+    }
+
+    private IEnumerator SpeedBuffCoroutine(float multiplier, float duration)
+    {
+        float originalSpeed = moveSpeed;
+        moveSpeed *= multiplier;
+        Debug.Log("Tốc độ tăng! Tốc độ mới: " + moveSpeed);
+        
+        yield return new WaitForSeconds(duration);
+        
+        moveSpeed = originalSpeed;
+        Debug.Log("Hết tác dụng tăng tốc. Tốc độ về: " + moveSpeed);
+    }
+
+    public void ApplyDamageBuff(int extraDamage, float duration)
+    {
+        StartCoroutine(DamageBuffCoroutine(extraDamage, duration));
+    }
+
+    private IEnumerator DamageBuffCoroutine(int extraDamage, float duration)
+    {
+        attackDamage += extraDamage;
+        Debug.Log("Sát thương tăng! Sát thương mới: " + attackDamage);
+        
+        yield return new WaitForSeconds(duration);
+        
+        attackDamage -= extraDamage;
+        Debug.Log("Hết tác dụng tăng sát thương. Sát thương về: " + attackDamage);
+    }
+
     void Die()
     {         // Xử lý khi nhân vật chết (ví dụ: phát animation, load lại scene, v.v.)
         Debug.Log("Player has died.");

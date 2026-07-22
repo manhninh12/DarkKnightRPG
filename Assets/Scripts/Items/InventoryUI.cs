@@ -17,8 +17,11 @@ public class InventoryUI : MonoBehaviour
             inventory.onItemChangedCallback += UpdateUI;
         }
 
-        // Tự động tìm tất cả các script InventorySlot nằm bên trong itemsParent
-        slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        // Tự động tìm tất cả các script InventorySlot nằm bên trong itemsParent (true để tìm cả những cái đang ẩn)
+        slots = itemsParent.GetComponentsInChildren<InventorySlot>(true);
+
+        // Gọi hàm UpdateUI ngay lập tức để đồng bộ nếu đã nhặt đồ trước khi mở túi
+        UpdateUI();
     }
 
     void Update()
