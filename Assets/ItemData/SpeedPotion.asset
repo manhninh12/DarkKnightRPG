@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpeedPotionData
   itemName: 
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: -3218169321993470800, guid: 4e803d135a9c21147b0cc630bf443034, type: 3}
   itemType: 0
   healAmount: 0
-  speedMultiplier: 1.5
-  duration: 5
+  speedMultiplier: 2
+  duration: 100

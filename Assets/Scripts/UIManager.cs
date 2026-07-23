@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI healthUI;
     public TextMeshProUGUI speedUI;
     public TextMeshProUGUI jumpUI;
+    public TextMeshProUGUI coinHUDText;
+    public TextMeshProUGUI coinMenuText;
     void Start()
     {
         // Đảm bảo Menu luôn ẩn khi vừa bấm Play game
@@ -18,7 +20,30 @@ public class UIManager : MonoBehaviour
         {
             playerMenuPanel.SetActive(false);
         }
+        
+        if (playerController != null)
+        {
+            playerController.OnCoinChanged += UpdateCoinHUD;
+            UpdateCoinHUD(playerController.currentCoins);
+        }
     }
+
+    private void OnDestroy()
+    {
+        if (playerController != null)
+        {
+            playerController.OnCoinChanged -= UpdateCoinHUD;
+        }
+    }
+
+    private void UpdateCoinHUD(int coins)
+    {
+        if (coinHUDText != null)
+        {
+            coinHUDText.text = coins.ToString();
+        }
+    }
+
     void Update()
     {
         // Nhấn phím C để bật/tắt Menu
@@ -42,5 +67,6 @@ public class UIManager : MonoBehaviour
         if (healthUI != null) healthUI.text = playerController.currentHealth + "/" + playerController.maxHealth;
         if (speedUI != null) speedUI.text = playerController.moveSpeed.ToString(); 
         if (jumpUI != null) jumpUI.text = playerController.amountOfJumps.ToString();
+        if (coinMenuText != null) coinMenuText.text = playerController.currentCoins.ToString();
     }
 }

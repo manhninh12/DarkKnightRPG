@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour
     private float lastAttackTime;
     public int maxHealth = 5;
     public int currentHealth;
+    
+    [Header("Coin Settings")]
+    public int currentCoins = 0;
+    public event Action<int> OnCoinChanged;
+    
     public Text health;
     [SerializeField] private float comboResetTime = 0.5f;
     [SerializeField] private float attackCooldown = 0.25f; // Thời gian của mỗi đòn đánh
@@ -218,6 +223,26 @@ public class PlayerController : MonoBehaviour
             currentHealth = maxHealth;
         }
         Debug.Log("Player healed by " + amount + ". Current Health: " + currentHealth);
+    }
+
+    public void AddCoins(int amount)
+    {
+        currentCoins += amount;
+        OnCoinChanged?.Invoke(currentCoins);
+        Debug.Log("Nhận được " + amount + " Coin. Tổng: " + currentCoins);
+    }
+
+    public bool SpendCoins(int amount)
+    {
+        if (currentCoins >= amount)
+        {
+            currentCoins -= amount;
+            OnCoinChanged?.Invoke(currentCoins);
+            Debug.Log("Đã tiêu " + amount + " Coin. Còn lại: " + currentCoins);
+            return true;
+        }
+        Debug.Log("Không đủ Coin! Cần " + amount + " nhưng chỉ có " + currentCoins);
+        return false;
     }
 
     public void ApplySpeedBuff(float multiplier, float duration)

@@ -16,4 +16,4 @@ MonoBehaviour:
   description: "Thu\u1ED1c h\u1ED3i m\xE1u"
   icon: {fileID: 1981699296613311681, guid: 4e803d135a9c21147b0cc630bf443034, type: 3}
   itemType: 0
-  healAmount: -179
+  healAmount: 25
