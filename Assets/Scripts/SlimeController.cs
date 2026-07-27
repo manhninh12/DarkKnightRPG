@@ -19,6 +19,9 @@ public class SlimeController : MonoBehaviour
     public Transform attackPoint;
     public LayerMask attackLayer;
 
+    [Header("Drop Settings")]
+    public GameObject coinPrefab;
+
     private bool isAttacking = false;
 
     void Start()
@@ -117,6 +120,25 @@ public class SlimeController : MonoBehaviour
     void Die() {
         Debug.Log(this.transform.name + " Died");
         
+        // Rớt coin ngẫu nhiên từ 3 đến 6 đồng
+        if (coinPrefab != null)
+        {
+            int dropCount = Random.Range(3, 7); // Random từ 3 đến 6
+            for (int i = 0; i < dropCount; i++)
+            {
+                // Rải đều coin xung quanh một chút
+                Vector3 randomOffset = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(0f, 0.5f), 0);
+                GameObject droppedCoin = Instantiate(coinPrefab, transform.position + randomOffset, Quaternion.identity);
+                
+                // Thêm lực nảy để tạo cảm giác rớt ra (nếu coin có Rigidbody2D)
+                Rigidbody2D coinRb = droppedCoin.GetComponent<Rigidbody2D>();
+                if (coinRb != null)
+                {
+                    coinRb.AddForce(new Vector2(Random.Range(-2f, 2f), Random.Range(3f, 5f)), ForceMode2D.Impulse);
+                }
+            }
+        }
+
         // Kích hoạt animation Die
         animator.SetTrigger("Die");
 

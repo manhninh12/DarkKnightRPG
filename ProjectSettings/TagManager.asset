@@ -16,7 +16,7 @@ TagManager:
   - ForeGround
   - Player
   - Monster
-  - 
+  - Items
   - 
   - 
   - 
@@ -86,6 +86,9 @@ TagManager:
     locked: 0
   - name: House
     uniqueID: 544754935
+    locked: 0
+  - name: Coins
+    uniqueID: 1156210579
     locked: 0
   - name: Player
     uniqueID: 156053941
