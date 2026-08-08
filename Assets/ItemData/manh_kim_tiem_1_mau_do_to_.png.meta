@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 4f3025e01b5886e4bb256ef0fefb8553
+guid: b4ec65ba18cd69e448f52c50fd5b88fe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3194916200223049787
-    second: manh_kim_tiem_1_mau_do_nhoss_0
-  - first:
-      213: 219036999028442186
-    second: manh_kim_tiem_1_mau_do_nhoss_1
+      213: 6074432916935767176
+    second: manh_kim_tiem_1_mau_do_to__0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,10 +48,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: manh_kim_tiem_1_mau_do_nhoss_0
+      name: manh_kim_tiem_1_mau_do_to__0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 5
+        y: 4
+        width: 23
+        height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5c7709ea4a069a3d0800000000000000
-      internalID: -3194916200223049787
+      spriteID: 88475e1ed88bc4450800000000000000
+      internalID: 6074432916935767176
       vertices: []
       indices: 
       edges: []
@@ -141,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3e6bf3cbcf5c6174996d45e696d7e860
+    spriteID: d42adb39b237c8242ae71782b8a7b339
     internalID: 0
     vertices: []
     indices: 
@@ -153,7 +150,7 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      manh_kim_tiem_1_mau_do_nhoss_0: -3194916200223049787
+      manh_kim_tiem_1_mau_do_to__0: 6074432916935767176
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
