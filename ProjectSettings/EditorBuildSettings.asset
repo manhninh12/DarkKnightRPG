@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BossRoom.unity
     guid: b128a38b4b5472e488fe400f99f4aff5
+  - enabled: 1
+    path: Assets/Scenes/map3.unity
+    guid: 007c0b1b742355845a677b05f55e4d1e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: f39cf2cf7eaf5b048aa15e3a2c46674f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
