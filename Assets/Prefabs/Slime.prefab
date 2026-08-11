@@ -222,6 +222,7 @@ MonoBehaviour:
   attackLayer:
     serializedVersion: 2
     m_Bits: 256
+  coinPrefab: {fileID: 5090093893625113663, guid: 585137dbaf8a37d468e8e680d67670cc, type: 3}
 --- !u!95 &4119625005433089080
 Animator:
   serializedVersion: 7

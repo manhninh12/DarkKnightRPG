@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ConsumableItemData
   itemName: Health Potion
   description: "Thu\u1ED1c h\u1ED3i m\xE1u"
-  icon: {fileID: 1981699296613311681, guid: 4e803d135a9c21147b0cc630bf443034, type: 3}
+  icon: {fileID: 6074432916935767176, guid: b4ec65ba18cd69e448f52c50fd5b88fe, type: 3}
   itemType: 0
-  healAmount: -179
+  buyPrice: 5
+  healAmount: 25
