@@ -7183,7 +7183,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 552870355}
   m_HandleRect: {fileID: 552870354}
   m_Direction: 0
-  m_Value: 0.043238364
+  m_Value: 0.043238375
   m_Size: 0.61735445
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -13566,7 +13566,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2032059800}
   m_Direction: 2
   m_Value: 0.9999998
-  m_Size: 0.5968849
+  m_Size: 0.59688497
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -65437,7 +65437,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 744592526}
   m_HandleRect: {fileID: 744592525}
   m_Direction: 2
-  m_Value: 1.0000002
+  m_Value: 1
   m_Size: 0.6475322
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -68482,7 +68482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTeleporter
   sceneToLoad: Map_2
-  destinationGateId: Gate_Map_2
+  destinationGateId: Gate_Map2
   currentGateId: Gate_Scene_1
   spawnOffset: {x: -2, y: 0}
 --- !u!61 &1466113214
@@ -79721,10 +79721,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3410428935245668686, guid: a0d49664ae5ef41418a75e028bfac1ac, type: 3}
+      propertyPath: m_GravityScale
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6807128870348281962, guid: a0d49664ae5ef41418a75e028bfac1ac, type: 3}
       propertyPath: health
       value: 
       objectReference: {fileID: 1380350713}
+    - target: {fileID: 6807128870348281962, guid: a0d49664ae5ef41418a75e028bfac1ac, type: 3}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6807128870348281962, guid: a0d49664ae5ef41418a75e028bfac1ac, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6807128870348281962, guid: a0d49664ae5ef41418a75e028bfac1ac, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8325125459995715849, guid: a0d49664ae5ef41418a75e028bfac1ac, type: 3}
       propertyPath: m_LocalPosition.x
       value: -27.03

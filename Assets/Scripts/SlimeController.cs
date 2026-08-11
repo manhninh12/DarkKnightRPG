@@ -185,8 +185,7 @@ public class SlimeController : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
         
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRadius);
+
 
         if (attackPoint == null) return;
         Gizmos.color = Color.red;
