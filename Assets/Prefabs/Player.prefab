@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6632422828893880818}
   - component: {fileID: 6648416119468671446}
   - component: {fileID: 6570174879775936376}
+  - component: {fileID: 4826476337580306905}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -37,6 +38,7 @@ Transform:
   m_Children:
   - {fileID: 4927089415932567407}
   - {fileID: 370499514882554007}
+  - {fileID: 3742749046802646643}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6256954165233362454
@@ -85,7 +87,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 156053941
-  m_SortingLayer: 12
+  m_SortingLayer: 15
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3204480812468917802, guid: fea36997e1f886e4ea9684fabab901d8, type: 3}
@@ -137,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9edcb808fd370408158cda5e96d7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  moveSpeed: 5
+  moveSpeed: 6
   jumpForce: 10
   groundLayer:
     serializedVersion: 2
@@ -147,9 +149,11 @@ MonoBehaviour:
   amountOfJumps: 2
   maxHealth: 100
   currentHealth: 0
+  currentCoins: 0
   health: {fileID: 0}
   comboResetTime: 0.5
   attackCooldown: 0.25
+  attackDamage: 1
   attackPoint: {fileID: 370499514882554007}
   attackRadius: 1.1
   attackLayer:
@@ -239,6 +243,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   climbSpeed: 3
+--- !u!114 &4826476337580306905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990879996045294936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3af3dcd9787bc4ebf607a9774a9c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventory
+  space: 16
+  items: []
+--- !u!1 &4976863279153735591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3742749046802646643}
+  m_Layer: 0
+  m_Name: StrawScarecrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3742749046802646643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4976863279153735591}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -116.4, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8325125459995715849}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5699015386076756057
 GameObject:
   m_ObjectHideFlags: 0
