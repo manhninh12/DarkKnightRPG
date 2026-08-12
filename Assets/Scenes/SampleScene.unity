@@ -3453,6 +3453,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 588703800483852510, guid: 585137dbaf8a37d468e8e680d67670cc, type: 3}
   m_PrefabInstance: {fileID: 348312706}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &244494412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 244494413}
+  - component: {fileID: 244494414}
+  m_Layer: 9
+  m_Name: Slime_SpawnPoint (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &244494413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244494412}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 162.8, y: 11.97, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 566945643}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &244494414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244494412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5eb77b951591341b0005edc0b5bae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
+  enemyPrefab: {fileID: 8721009867623882428, guid: 06e45c7b19d841943bb159a226fd15e8, type: 3}
+  respawnTime: 60
 --- !u!1 &256291406
 GameObject:
   m_ObjectHideFlags: 0
@@ -3595,6 +3641,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 588703800483852510, guid: 585137dbaf8a37d468e8e680d67670cc, type: 3}
   m_PrefabInstance: {fileID: 126584305}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &261433831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 261433832}
+  - component: {fileID: 261433833}
+  m_Layer: 9
+  m_Name: Slime_SpawnPoint (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &261433832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261433831}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 150.43, y: 8.96, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 566945643}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &261433833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261433831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5eb77b951591341b0005edc0b5bae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
+  enemyPrefab: {fileID: 8721009867623882428, guid: 06e45c7b19d841943bb159a226fd15e8, type: 3}
+  respawnTime: 60
 --- !u!1 &268055437
 GameObject:
   m_ObjectHideFlags: 0
@@ -5686,6 +5778,52 @@ Sprite:
   m_Bones: []
   m_ScriptableObjects: []
   m_SpriteID: 
+--- !u!1 &386232320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 386232321}
+  - component: {fileID: 386232322}
+  m_Layer: 9
+  m_Name: Slime_SpawnPoint (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &386232321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386232320}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 140.57, y: 5.84, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 566945643}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &386232322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386232320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5eb77b951591341b0005edc0b5bae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
+  enemyPrefab: {fileID: 8721009867623882428, guid: 06e45c7b19d841943bb159a226fd15e8, type: 3}
+  respawnTime: 60
 --- !u!1 &387794998
 GameObject:
   m_ObjectHideFlags: 0
@@ -7186,8 +7324,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 552870355}
   m_HandleRect: {fileID: 552870354}
   m_Direction: 0
-  m_Value: 0.04323845
-  m_Size: 0.61735433
+  m_Value: 0.043238375
+  m_Size: 0.61735445
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7587,6 +7725,52 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
+--- !u!1 &515943433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 515943434}
+  - component: {fileID: 515943435}
+  m_Layer: 9
+  m_Name: Slime_SpawnPoint (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &515943434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515943433}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 120.2, y: -1.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 566945643}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &515943435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515943433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5eb77b951591341b0005edc0b5bae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
+  enemyPrefab: {fileID: 8721009867623882428, guid: 06e45c7b19d841943bb159a226fd15e8, type: 3}
+  respawnTime: 60
 --- !u!1 &518415535
 GameObject:
   m_ObjectHideFlags: 0
@@ -8691,6 +8875,10 @@ Transform:
   - {fileID: 1130713702}
   - {fileID: 1001154401}
   - {fileID: 1636579310}
+  - {fileID: 515943434}
+  - {fileID: 386232321}
+  - {fileID: 261433832}
+  - {fileID: 244494413}
   - {fileID: 1035962502}
   - {fileID: 1610833500}
   - {fileID: 688157839}
@@ -13568,8 +13756,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2032059801}
   m_HandleRect: {fileID: 2032059800}
   m_Direction: 2
-  m_Value: 0.99999964
-  m_Size: 0.5968849
+  m_Value: 1.0000001
+  m_Size: 0.596885
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -65453,8 +65641,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 744592526}
   m_HandleRect: {fileID: 744592525}
   m_Direction: 2
-  m_Value: 1.0000002
-  m_Size: 0.64753217
+  m_Value: 1
+  m_Size: 0.6475322
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -69610,8 +69798,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1753133231}
   m_HandleRect: {fileID: 1753133230}
   m_Direction: 2
-  m_Value: 1.0000004
-  m_Size: 0.64753217
+  m_Value: 1.0000006
+  m_Size: 0.6475323
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -71361,7 +71549,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 110.5, y: 3.3, z: 0}
-  m_LocalScale: {x: 5.97, y: 1, z: 1}
+  m_LocalScale: {x: 5.97, y: 1.84, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 579159842}
