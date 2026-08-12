@@ -64,6 +64,19 @@ public class PlayerController : MonoBehaviour
             Die();
             return;
         }
+
+        // Tự động tìm lại Text Máu nếu bị đứt liên kết khi chuyển Scene
+        if (health == null)
+        {
+            GameObject healthObj = GameObject.Find("HealthText"); // Giả sử tên Object là HealthText
+            if (healthObj == null) healthObj = GameObject.Find("Health"); // Hoặc Health
+            
+            if (healthObj != null) 
+            {
+                health = healthObj.GetComponent<Text>();
+            }
+        }
+
         if (health != null)
         {
             health.text = currentHealth.ToString();

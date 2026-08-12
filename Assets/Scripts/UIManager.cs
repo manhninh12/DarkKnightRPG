@@ -21,8 +21,24 @@ public class UIManager : MonoBehaviour
             playerMenuPanel.SetActive(false);
         }
         
+        TryFindPlayer();
+    }
+
+    private void TryFindPlayer()
+    {
+        if (playerController == null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+            {
+                playerController = playerObj.GetComponent<PlayerController>();
+            }
+        }
+
         if (playerController != null)
         {
+            // Hủy đăng ký cũ (nếu có) để tránh lặp sự kiện
+            playerController.OnCoinChanged -= UpdateCoinHUD; 
             playerController.OnCoinChanged += UpdateCoinHUD;
             UpdateCoinHUD(playerController.currentCoins);
         }
@@ -46,6 +62,11 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
+        if (playerController == null)
+        {
+            TryFindPlayer();
+        }
+
         // Nhấn phím C để bật/tắt Menu
         if (Input.GetKeyDown(KeyCode.C))
         {

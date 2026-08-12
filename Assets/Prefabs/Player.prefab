@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6648416119468671446}
   - component: {fileID: 6570174879775936376}
   - component: {fileID: 4826476337580306905}
+  - component: {fileID: 4709530476662179889}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -115,7 +116,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 4
   m_Material: {fileID: 6200000, guid: 723f78bc94658fe4fb94a0721451f3b2, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -139,15 +140,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9edcb808fd370408158cda5e96d7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  moveSpeed: 6
-  jumpForce: 15
+  moveSpeed: 5
+  jumpForce: 10
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   groundCheck: {fileID: 4927089415932567407}
   groundCheckRadius: 0.2
   amountOfJumps: 2
-  maxHealth: 100
+  maxHealth: 20
   currentHealth: 0
   currentCoins: 0
   health: {fileID: 0}
@@ -257,6 +258,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
   space: 16
   items: []
+--- !u!114 &4709530476662179889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990879996045294936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64cb13321b49c594d8c9682bee645d64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPersistent
 --- !u!1 &4976863279153735591
 GameObject:
   m_ObjectHideFlags: 0
