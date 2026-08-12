@@ -18,5 +18,5 @@ MonoBehaviour:
   itemType: 0
   buyPrice: 5
   healAmount: 0
-  extraDamage: 2
-  duration: 100
+  extraDamage: 1
+  duration: 60

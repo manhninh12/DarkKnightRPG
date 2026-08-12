@@ -17,4 +17,4 @@ MonoBehaviour:
   icon: {fileID: 6074432916935767176, guid: b4ec65ba18cd69e448f52c50fd5b88fe, type: 3}
   itemType: 0
   buyPrice: 5
-  healAmount: 25
+  healAmount: 10
