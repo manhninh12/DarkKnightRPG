@@ -11432,7 +11432,7 @@ MonoBehaviour:
   toBeContinued: {fileID: 1973963418}
   cardFadeSpeed: 1.5
   cardHold: 3
-  sceneAfterDeath: MainMenu
+  sceneAfterDeath: Outro
 --- !u!4 &1525613399 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8325125459995715849, guid: a0d49664ae5ef41418a75e028bfac1ac, type: 3}

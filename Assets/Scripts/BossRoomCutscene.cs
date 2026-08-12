@@ -42,7 +42,7 @@ public class BossRoomCutscene : MonoBehaviour
     [SerializeField] private Image toBeContinued;
     [SerializeField] private float cardFadeSpeed = 1.5f;
     [SerializeField] private float cardHold = 3f;
-    [SerializeField] private string sceneAfterDeath = "MainMenu";
+    [SerializeField] private string sceneAfterDeath = "Outro";
 
     private Animator bossAnim;
 
